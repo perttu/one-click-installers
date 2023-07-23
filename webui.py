@@ -12,7 +12,7 @@ conda_env_path = os.path.join(script_dir, "installer_files", "env")
 # Use this to set your command-line flags. For the full list, see:
 # https://github.com/oobabooga/text-generation-webui/#starting-the-web-ui
 # Example: CMD_FLAGS = '--chat --listen'
-CMD_FLAGS = ''
+CMD_FLAGS = '--listen --chat'
 
 
 # Allows users to set flags in "OOBABOOGA_FLAGS" environment variable
@@ -172,7 +172,7 @@ def update_dependencies():
 
     # Install or update exllama as needed
     if not os.path.exists("exllama/"):
-        run_cmd("git clone https://github.com/turboderp/exllama.git", environment=True)
+        run_cmd("git clone https://github.com/jllllll/exllama.git", environment=True)
     else:
         os.chdir("exllama")
         run_cmd("git pull", environment=True)
